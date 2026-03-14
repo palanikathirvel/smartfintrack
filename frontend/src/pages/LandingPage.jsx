@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useGlobalState';
 import { PieChart, TrendingUp, PiggyBank, ShieldCheck } from 'lucide-react';
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
@@ -13,6 +14,14 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
 );
 
 const LandingPage = () => {
+    const { user, loading } = useAuth();
+
+    if (loading) return null; // Or a loading spinner
+
+    if (user) {
+        return <Navigate to="/dashboard" replace />;
+    }
+
     return (
         <div className="min-h-screen flex flex-col">
             {/* Navbar Placeholder */}

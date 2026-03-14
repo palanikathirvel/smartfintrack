@@ -17,7 +17,7 @@ const Sidebar = ({ className = "", onItemClick }) => {
     const location = useLocation();
 
     const navItems = [
-        { path: '/', label: 'Dashboard', icon: LayoutDashboard },
+        { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
         { path: '/add-expense', label: 'Add Expenditure', icon: PlusCircle },
         { path: '/expenses', label: 'Expenditure Ledger', icon: History },
         { path: '/budgets', label: 'Budgets', icon: PieChart },
@@ -29,7 +29,7 @@ const Sidebar = ({ className = "", onItemClick }) => {
     ];
 
     return (
-        <aside className={`${className} flex-col w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 h-screen transition-all duration-300`}>
+        <aside className={`${className} flex-col w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 h-screen transition-all duration-300 overflow-y-auto`}>
             <div className="p-6 h-full flex flex-col">
                 <div className="flex items-center gap-3 px-2 mb-8">
                     <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/30">
