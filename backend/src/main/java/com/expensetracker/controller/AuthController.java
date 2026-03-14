@@ -29,7 +29,7 @@ public class AuthController {
             JwtResponse jwtResponse = authService.authenticateUser(loginRequest);
             return ResponseEntity.ok(jwtResponse);
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body(new MessageResponse("Error: Invalid credentials!"));
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: " + e.getMessage()));
         }
     }
 
