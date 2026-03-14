@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Use the environment variable, or fallback to localhost for development
-const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api/';
+const API_URL = import.meta.env.VITE_API_BASE_URL || 'https://smartfintrackbackend.onrender.com/api/';
 
 const axiosInstance = axios.create({
     baseURL: API_URL,
