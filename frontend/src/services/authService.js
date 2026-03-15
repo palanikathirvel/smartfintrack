@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_URL = (import.meta.env.VITE_API_BASE_URL || 'https://smartfintrackbackend.onrender.com/api/') + 'auth/';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://smartfintrackbackend.onrender.com';
+const API_URL = (BASE_URL.endsWith('/') ? BASE_URL + 'api/auth/' : BASE_URL + '/api/auth/');
 
 const register = (name, email, password, monthlyIncome) => {
     return axios.post(API_URL + 'register', {
